@@ -2,6 +2,8 @@
 import Hero from "./Components/Hero"
 import JobCard from "./Components/JobCard"
 import Navbar from "./Components/Navbar"
+import SavedCard from "./Components/SavedCard"
+import Search from "./Components/Search"
 
 function App() {
   return (
@@ -10,7 +12,9 @@ function App() {
       <Navbar/>
       <Hero/>
       {/* <Filter/> */}
-      <JobCard/>
+      {/* <JobCard/> */}
+      {/* <SavedCard/> */}
+      <Search/>
     </div>
   )
 }
