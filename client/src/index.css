@@ -1,1 +1,20 @@
 @import "tailwindcss";
+
+
+
+@theme {
+  --color-blue: #0034D1;
+  --color-tahiti: #3ab7bf;
+  --color-bermuda: #78dcca;
+}
+
+
+body{
+    background-color: #151414;
+}
+
+/* 
+header {
+ background-color: white;
+} */
+
