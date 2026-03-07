@@ -4,7 +4,7 @@ import "react-range-slider-input/dist/style.css";
 
 function Filter() {
   return (
-    <section className="flex flex-col gap-2 ml-40  w-80 px-5 py-3 bg-white rounded-xl">
+    <section className="flex flex-col gap-2  px-5 py-3 bg-white rounded-xl">
       <p className="text-2xl font-semibold text-center">Filter</p>
       {/* date */}
       <div className="flex flex-col">

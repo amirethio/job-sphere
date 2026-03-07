@@ -2,7 +2,7 @@ import SearchIcon from "@mui/icons-material/Search";
 function Search() {
   return (
     <>
-      <section className="bg-white my-40 mx-30 rounded-2xl py-2 px-3 flex align-middle">
+      <section className="bg-white rounded-2xl py-2 px-3 flex align-middle -mt-3">
         <span className="flex w-full items-center gap-2">
           <SearchIcon className="" />
           <input

@@ -5,7 +5,7 @@ import ShareIcon from "@mui/icons-material/Share";
 function JobCard() {
   return (
     <>
-      <section className="bg-white max-w-150 rounded-3xl m-10 px-4 py-3 flex justify-between gap-3">
+      <section className="bg-white rounded-3xl px-4 py-3 flex justify-between gap-3 shadow-2xs ">
         <div className="">
           <img src={product1} alt="" className="w-65" />
         </div>
@@ -15,9 +15,9 @@ function JobCard() {
               <h2 className="text-3xl font-semibold">Product Design</h2>
               <p>Binford Ltd.</p>
               <div className="text-mist-600 flex gap-3 ">
-                <p className="bg-gray-300 p-1">Remote</p>
-                <p className="bg-gray-300 p-1">Full-time</p>
-                <p className="bg-gray-300 p-1">$200-$1,200</p>
+                <p className="bg-gray-300 ">Remote</p>
+                <p className="bg-gray-300 ">Full-time</p>
+                <p className="bg-gray-300 ">$200-$1,200</p>
               </div>
             </span>
             <span className="flex gap-5">

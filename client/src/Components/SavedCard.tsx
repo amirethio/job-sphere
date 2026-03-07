@@ -2,7 +2,7 @@ import saved1 from "./../assets/img/saved1.png";
 import ClearIcon from "@mui/icons-material/Clear";
 function SavedCard() {
   return (
-    <section className="bg-white max-w-xs rounded-4xl m-30 flex p-3 gap-3 ">
+    <section className="bg-white  rounded-2xl flex p-3 gap-3 shadow-2xl ">
       <div className="w-15">
         <img src={saved1} alt="" />
       </div>
