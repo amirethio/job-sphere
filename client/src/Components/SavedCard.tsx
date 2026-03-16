@@ -15,7 +15,7 @@ function SavedCard({ data }: jobProps | undefinedProps) {
       </div>
       <div>
         <span className="flex justify-between align-middle gap-4">
-          <h3 className="text-2xl font-semibold"> {data?.title} </h3>
+          <h3 className="text-xl font-medium"> {data?.title} </h3>
           <ClearIcon />
         </span>
         <p> {data?.company} </p>

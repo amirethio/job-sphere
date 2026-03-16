@@ -34,7 +34,7 @@ function JobsDetail({ data }: jobProps) {
             <h4 className="text-lg font-medium">Location:</h4>
             <p className="mb-4 ">{data.location} </p>
             <h4 className="text-lg font-medium">Experiance:</h4>
-            <p className=" mb-4">{data.experience} </p>
+            <p className=" mb-4">{data.experience} Years </p>
             <h4 className="text-lg font-medium">Number of Applicants:</h4>
             <p className="mb-4">{data.numberOfApplicants}</p>
           </div>

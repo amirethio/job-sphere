@@ -1,8 +1,37 @@
 import { GrLocation } from "react-icons/gr";
-// import RangeSlider from "react-range-slider-input";
 import "react-range-slider-input/dist/style.css";
+import { useDispatch } from "react-redux";
+import { updateFilter, removeFilter } from "./../features/filterSlice";
+import { useState, Dispatch, SetStateAction } from "react";
+interface ChildProps {
+  setClick: Dispatch<SetStateAction<boolean>>;
+}
 
-function Filter() {
+
+
+
+
+function Filter(props : ChildProps) {
+  const dispatch = useDispatch();
+
+  function handleChnage(element) {
+    const values = element.value;
+    if (element.type == "checkbox") {
+      props.setClick((pre) => !pre);
+      // if (element.checked) {
+      //   dispatch(updateFilter({ jobType: values }));
+      // } else {
+      //   dispatch(removeFilter({ jobType: values }));
+      // }
+    } else {
+      if (values == "All") {
+        dispatch(removeFilter({ experience: values }));
+      } else {
+        dispatch(updateFilter({ experience: values }));
+      }
+    }
+  }
+
   return (
     <section className="flex flex-col gap-2  px-5 py-3 bg-white rounded-xl">
       <p className="text-2xl font-semibold text-center">Filter</p>
@@ -21,31 +50,59 @@ function Filter() {
         <p className="font-medium ">Job Type</p>
         <div className="border-2 border-gray-400 rounded flex flex-col px-2 py-2 text-gray-600">
           <label htmlFor="">
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              onChange={(e) => handleChnage(e.target)}
+              value="Full-time"
+            />
             &nbsp; Full-time
           </label>
           <label htmlFor="">
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              value="Part-time"
+              onChange={(e) => handleChnage(e.target)}
+            />
             &nbsp;Part-time
           </label>
           <label htmlFor="">
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              value="Contract"
+              onChange={(e) => handleChnage(e.target)}
+            />
             &nbsp;Contract
           </label>
           <label htmlFor="">
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              value="Volunteer"
+              onChange={(e) => handleChnage(e.target)}
+            />
             &nbsp;Volunteer
           </label>
           <label htmlFor="">
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              value="Internship"
+              onChange={(e) => handleChnage(e.target)}
+            />
             &nbsp;Internship
           </label>
           <label htmlFor="">
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              value="Remote"
+              onChange={(e) => handleChnage(e.target)}
+            />
             &nbsp; Remote
           </label>
           <label htmlFor="">
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              value="On-Site"
+              onChange={(e) => handleChnage(e.target)}
+            />
             &nbsp;On-Site
           </label>
         </div>
@@ -71,10 +128,14 @@ function Filter() {
           name="level"
           id=""
           className="flex  gap-2 border-2 border-gray-400 rounded text-gray-600"
+          onChange={(e) => handleChnage(e.target)}
         >
-          <option value="Bignner">Bignner</option>
-          <option value="Intermediate">Intermediate</option>
-          <option value="Expert">Expert</option>
+          <option selected value={-1}>
+            All
+          </option>
+          <option value="0">Bignner</option>
+          <option value="3">Intermediate</option>
+          <option value="6">Expert</option>
         </select>
       </div>
       <div className="flex flex-col">
@@ -111,7 +172,9 @@ function Filter() {
         </div>
       </div>
       <div className="flex flex-col">
-        <label htmlFor="" className="font-medium">Currency</label>
+        <label htmlFor="" className="font-medium">
+          Currency
+        </label>
         <select
           name=""
           id=""
@@ -122,7 +185,9 @@ function Filter() {
         </select>
       </div>
       <div className="flex justify-center">
-        <button className="bg-blue text-white px-3 py-2 rounded-xl font-medium">Reset all filter</button>
+        <button className="bg-blue text-white px-3 py-2 rounded-xl font-medium">
+          Reset all filter
+        </button>
       </div>
     </section>
   );

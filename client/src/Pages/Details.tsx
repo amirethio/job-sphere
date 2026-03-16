@@ -2,23 +2,31 @@ import JobsDetail from "../Components/JobsDetail";
 import { useParams } from "react-router";
 import jobs from "../assets/data";
 import SavedCard from "../Components/SavedCard";
-import Search from "../Components/Search";
+// import Search from "../Components/Search";
+import { useNavigate } from "react-router";
 
 function Details() {
+  const navigate = useNavigate();
+
   const params = useParams<{ product_id: string }>();
 
   const data = jobs?.find((data) => String(data?.id) == params.product_id);
-  console.log(data);
+  function handleBack() {
+    navigate("/");
+  }
 
   return (
     <section className=" mx-15 ">
       {/* search and back */}
       <div className="flex  my-6  gap-27">
-        <button className="font-semibold text-xl text-gray-700">
+        <button
+          className="font-semibold text-xl text-gray-700 cursor-pointer"
+          onClick={handleBack}
+        >
           &lt; Back
         </button>
         <div className="min-w-1/2 mt-4">
-          <Search />
+          {/* <Search /> */}
         </div>
       </div>
       <div className="gap-10 flex justify-around ">

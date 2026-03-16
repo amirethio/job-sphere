@@ -50,7 +50,7 @@ function Register() {
               className="border-2 rounded-md px-2 border-gray-300 mt-5 pr-10 py-1 w-full"
             />
             <div className="flex justify-center mb-5">
-              <button className="b-blue px-20 rounded-md py-2 text-white font-semibold bg-blue mt-5 ">
+              <button className="b-blue px-18 rounded-md py-2 text-white font-semibold bg-blue mt-5 ">
                 Create account
               </button>
             </div>
@@ -73,8 +73,8 @@ function Register() {
                 <LinkedInIcon sx={{ fontSize: 28 }} color="primary" />
               </div>
             </div>
-            <p className="font-semibold">
-              Don't have an account?
+            <p className="font-semibold ">
+              have an account?
               <NavLink to="login" className="text-blue">
                 Login
               </NavLink>

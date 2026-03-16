@@ -19,12 +19,12 @@ function JobCard({ data }: jobProps) {
         key={data.id}
       >
         <div className="">
-          <img src={data.companyLogo} alt="" className="w-30" />
+          <img src={data.companyLogo} alt="" className="w-25" />
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col w-4/5">
           <div className="flex justify-between">
             <span className="">
-              <h2 className="text-3xl font-semibold">{data.title}</h2>
+              <h2 className="text-2xl font-medium">{data.title}</h2>
               <p> {data.company} </p>
               <div className="text-mist-600 flex gap-3 ">
                 <p className="bg-gray-300 ">{data.location} </p>
@@ -37,9 +37,9 @@ function JobCard({ data }: jobProps) {
               <ShareIcon sx={{ fontSize: 35 }} />
             </span>
           </div>
-          <p className="text-mist-600 mt-4 text-sm">{data.shortDescription}</p>
+          <p className="text-mist-600 mt-2 text-sm">{data.shortDescription}</p>
           <button
-            className="bg-blue text-white font-semibold px-3 py-2  rounded-2xl mt-2 w-3/10 ml-0 self-end mr-4 cursor-pointer"
+            className="bg-blue text-white font-medium px-3 py-2  rounded-2xl mt-2 w-3/10 ml-0 self-end mr-4 cursor-pointer text-sm"
             onClick={() => HandleDetail(data.id)}
           >
             View Details
