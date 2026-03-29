@@ -11,7 +11,11 @@ function JobsDetail({ data }: jobProps) {
       <main className="bg-white rounded-3xl px-4 py-3  ">
         <section className=" flex justify-between mb-5">
           <div className="flex items-center gap-6">
-            <img src={data.companyLogo} alt="" className="w-22" />
+            <img
+              src={`../../public/${data.companyLogo}`}
+              alt=""
+              className="w-22"
+            />
             <span>
               <h2 className="text-3xl font-semibold"> {data.title} </h2>
               <p>{data.company}</p>

@@ -4,13 +4,17 @@ import type { Job } from "../assets/data";
 import { useNavigate } from "react-router";
 
 type jobProps = {
-  data: Job;
+  data: jobsId;
+};
+
+type jobsId = Job & {
+  _id: string;
 };
 function JobCard({ data }: jobProps) {
   const navigate = useNavigate();
 
-  function HandleDetail(id: number) {
-    navigate(`/product/${id}`);
+  function HandleDetail(data: { _id: string }) {
+    navigate(`/product/${data._id}`);
   }
   return (
     <>
@@ -19,7 +23,11 @@ function JobCard({ data }: jobProps) {
         key={data.id}
       >
         <div className="">
-          <img src={data.companyLogo} alt="" className="w-25" />
+          <img
+            src={`../../public/${data.companyLogo}`}
+            alt=""
+            className="w-25 text-black"
+          />
         </div>
         <div className="flex flex-col w-4/5">
           <div className="flex justify-between">
@@ -40,7 +48,7 @@ function JobCard({ data }: jobProps) {
           <p className="text-mist-600 mt-2 text-sm">{data.shortDescription}</p>
           <button
             className="bg-blue text-white font-medium px-3 py-2  rounded-2xl mt-2 w-3/10 ml-0 self-end mr-4 cursor-pointer text-sm"
-            onClick={() => HandleDetail(data.id)}
+            onClick={() => HandleDetail(data)}
           >
             View Details
           </button>

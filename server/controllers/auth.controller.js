@@ -8,6 +8,6 @@ export const handleRegister = async (req, res) => {
 export const handleLogin = async (req, res) => {
   const response = await loginService(req.body);
   console.log(response);
-  res.send("working")
-//   res.json(response)
+  // res.send("working")
+  res.json(response)
 };

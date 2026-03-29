@@ -29,3 +29,17 @@ export const getJobsServices = async () => {
     };
   }
 };
+
+export const getSingleService = async (id) => {
+  try {
+    const job = await JobsSchema.findById(id);
+    return {
+      status: "sucess",
+      data: job,
+    };
+  } catch (error) {
+    return {
+      message: "something went wrong",
+    };
+  }
+};

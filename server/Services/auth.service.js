@@ -8,7 +8,7 @@ export const registerService = async (data) => {
   try {
     if (
       (data.email == "") |
-      ((data.password == "") | (email.first_name == ""))
+      ((data.password == "") | (data.first_name == ""))
     ) {
       return {
         status: 401,

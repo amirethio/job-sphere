@@ -1,6 +1,5 @@
 import { Outlet } from "react-router";
 import Navbar from "../Components/Navbar";
-// import Details from "../Pages/Details";
 
 
 
@@ -9,7 +8,6 @@ function RootLayout() {
     <>
       <Navbar />
       <Outlet />
-      {/* <Details/> */}
     </>
   );
 }

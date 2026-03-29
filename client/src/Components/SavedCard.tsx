@@ -11,7 +11,7 @@ function SavedCard({ data }: jobProps | undefinedProps) {
   return (
     <section className="bg-white  rounded-2xl flex p-3 gap-3 shadow-2xl ">
       <div className="w-15">
-        <img src={data?.companyLogo} alt="" />
+        <img src={`../../public/${data?.companyLogo}`} alt="" />
       </div>
       <div>
         <span className="flex justify-between align-middle gap-4">
